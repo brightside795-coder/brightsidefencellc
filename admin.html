@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Brightside Fence Admin</title>
+
+<style>
+
+body{
+font-family:Arial;
+text-align:center;
+padding:50px;
+}
+
+input{
+margin:10px;
+}
+
+button{
+padding:10px 20px;
+background:#2c7a2c;
+color:white;
+border:none;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h2>Brightside Fence Image Upload</h2>
+
+<p>Admin Access Only</p>
+
+<input type="password" id="password" placeholder="Enter password">
+
+<br>
+
+<input type="file" id="imageUpload">
+
+<br><br>
+
+<button onclick="upload()">Upload Image</button>
+
+<script>
+
+const adminPassword="fence123";
+
+function upload(){
+
+let pass=document.getElementById("password").value;
+
+if(pass!==adminPassword){
+
+alert("Wrong Password");
+
+return;
+
+}
+
+let file=document.getElementById("imageUpload").files[0];
+
+let reader=new FileReader();
+
+reader.onload=function(){
+
+let images=JSON.parse(localStorage.getItem("galleryImages")) || [];
+
+images.push(reader.result);
+
+localStorage.setItem("galleryImages",JSON.stringify(images));
+
+alert("Image Uploaded!");
+
+};
+
+reader.readAsDataURL(file);
+
+}
+
+</script>
+
+</body>
+
+</html>
