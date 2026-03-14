@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Brightside Fence LLC</title>
+
+<style>
+
+body{
+font-family: Arial;
+margin:0;
+background:#f4f4f4;
+}
+
+header{
+background:#2c7a2c;
+color:white;
+padding:20px;
+text-align:center;
+}
+
+nav{
+background:#333;
+padding:10px;
+text-align:center;
+}
+
+nav a{
+color:white;
+margin:10px;
+text-decoration:none;
+font-weight:bold;
+}
+
+.hero{
+padding:60px;
+text-align:center;
+background:#e9f5e9;
+}
+
+.callbtn{
+background:#2c7a2c;
+color:white;
+padding:15px 30px;
+text-decoration:none;
+font-size:20px;
+border-radius:5px;
+}
+
+.section{
+padding:40px;
+text-align:center;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+padding:20px;
+}
+
+.gallery img{
+width:100%;
+border-radius:8px;
+}
+
+footer{
+background:#222;
+color:white;
+padding:20px;
+text-align:center;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Brightside Fence LLC</h1>
+<p>Professional Residential Fence Installation</p>
+</header>
+
+<nav>
+<a href="#about">About</a>
+<a href="#gallery">Gallery</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<div class="hero">
+
+<h2>Quality Fence Installation You Can Trust</h2>
+
+<p>Vinyl • Wood • Aluminum • Repairs</p>
+
+<br>
+
+<a class="callbtn" href="tel:6315788287">Call Now 631-578-8287</a>
+
+</div>
+
+<div class="section" id="about">
+
+<h2>About Brightside Fence</h2>
+
+<p>
+
+Brightside Fence LLC provides professional residential fence installation across Long Island.
+
+We specialize in vinyl, wood, aluminum, and custom fencing solutions designed to protect and enhance your property.
+
+</p>
+
+</div>
+
+<div class="section" id="gallery">
+
+<h2>Our Work</h2>
+
+<div class="gallery" id="galleryContainer"></div>
+
+</div>
+
+<div class="section" id="contact">
+
+<h2>Contact Us</h2>
+
+<p>Phone: 631-578-8287</p>
+
+<p>Email: brightside795@gmail.com</p>
+
+<a class="callbtn" href="tel:6315788287">Call Now</a>
+
+</div>
+
+<footer>
+
+<p>© 2026 Brightside Fence LLC</p>
+
+</footer>
+
+<script>
+
+let images = JSON.parse(localStorage.getItem("galleryImages")) || [];
+
+let gallery = document.getElementById("galleryContainer");
+
+images.forEach(img=>{
+let image=document.createElement("img");
+image.src=img;
+gallery.appendChild(image);
+});
+
+</script>
+
+</body>
+</html>
